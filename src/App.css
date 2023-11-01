@@ -1,38 +1,141 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border-box;
+    /* overflow-y: hidden; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body,
+html {
+    margin: 0;
+    padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.attribution {
+    width: 40%;
+    margin: auto;
+    text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.outer-container {
+    background-color:cadetblue;
+    padding: 3rem 6rem;
+    margin: 3rem auto;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    box-shadow: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--bs-body-color);
+    background-color: var(--bs-form-control-bg);
+    background-clip: padding-box;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top-section {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.calculator-screen-section:hover {
+    shape-margin: inherit;
+    font-size: 16px;
+    resize: none;
+    text-align: center;
+
+
+}
+
+.calculator-Button-section {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    padding: 0.3rem;
+    font-size: 150px;
+    text-shadow: rgb(17, 17, 17);
+}
+
+
+
+.inp_num {
+    border-radius: 20px;
+    border-color: black;
+    box-shadow: 5px 4px;
+    /* background-color: ; */
+}
+div:hover{
+    background-color: darkcyan;
+}
+.calculator-screen-section div {
+    font-size: 15px;
+    
+}
+
+.calculator-item{
+    background-color: #f8f1f1;
+    border-radius: 5px;
+    flex: 2 0 22%;
+    margin: 1.5%;
+    padding: 7px 0;
+    text-align: center;
+    min-height: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    /* cursor: pointer; */
+    /* box-shadow: 0px 0px 43px 17px rgba(153,153,153,1); */
+    
+}
+
+/* calculator-item:hover{
+    background-color: black;
+    flex: 1 0 46%;
+    background-color:rgb(138, 132, 132);
+
+} */
+.special-key {
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+#reset:hover {
+    background-color: lightblue;
+    flex: 1 0 46%;
+}
+
+#equal:hover {
+    background-color: lightblue;
+    flex: 1 0 46%;
+    background-color:rgb(138, 132, 132);
+}
+
+#del {
+    background-color: lightblue;
+}
+
+@media only screen and (max-width: 1000px) {
+    .outer-container {
+        width: 70%;
+        padding: 0.2rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .outer-container {
+        width: 80%;
+        padding: 0.2rem;
+    }
 }

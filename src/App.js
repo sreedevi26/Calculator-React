@@ -1,23 +1,65 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [display, setDisplay] = useState('');
+
+  const handleClick = (value) => {
+    setDisplay(display + value);
+  };
+
+  const CalculResult = () => {
+    try {
+      const result = eval(display);
+      setDisplay(result);
+    } catch (error) {
+      setDisplay('Error, Invalid Entry');
+    }
+  };
+
+  const cleardisplay = () => {
+    setDisplay('');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="outer-container">
+      <div className="top-section" style={{ background: 'danger' }}>
+        Calculator
+      </div>
+      <br />
+
+      <div className="calculator-screen-section">
+        <input
+          id="txt"
+          type="text"
+          className="form-control inp_num"
+          value={display}
+        />
+        <br /><br />
+        <div id="result"></div>
+      </div>
+
+      <div className="calculator-Button-section">
+       
+        <button className="calculator-item" onClick={() => handleClick(7)}>7</button>
+        <button className="calculator-item" onClick={() => handleClick(8)}>8</button>
+        <button className="calculator-item" onClick={() => handleClick(9)}>9</button>
+        <button className="calculator-item" onClick={() => handleClick('+')}>+</button>
+        <button className="calculator-item" onClick={() => handleClick(4)}>4</button>
+        <button className="calculator-item" onClick={() => handleClick(5)}>5</button>
+        <button className="calculator-item" onClick={() => handleClick(6)}>6</button>
+        <button className="calculator-item" onClick={() => handleClick('-')}>-</button>
+        <button className="calculator-item" onClick={() => handleClick(1)}>1</button>
+        <button className="calculator-item" onClick={() => handleClick(2)}>2</button>
+        <button className="calculator-item" onClick={() => handleClick(3)}>3</button>
+        <button className="calculator-item" onClick={() => handleClick('.')}>.</button>
+        <button className="calculator-item" onClick={() => handleClick(0)}>0</button>
+        <button className="calculator-item" onClick={() => handleClick('/')}>/</button>
+        <button className="calculator-item" onClick={() => handleClick('*')}>x</button>
+        
+        <button className="calculator-item special-key" onClick={cleardisplay}>AC</button>
+        <button className="calculator-item special-key"onClick={CalculResult}>=</button>
+      </div>
     </div>
   );
 }
